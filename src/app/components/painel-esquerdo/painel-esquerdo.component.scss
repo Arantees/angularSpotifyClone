@@ -3,6 +3,9 @@
 $h-spotify-logo : 120px;
 $menu-opcoes : 150px;
 $m-entre-menus : 10px;
+$h-footer-user: 70px;
+
+$h-desconsiderar: calc($h-spotify-logo + $menu-opcoes + $h-footer-user );
 
 :host {
     max-width: 300px;
@@ -23,30 +26,55 @@ $m-entre-menus : 10px;
         .image-container {
             min-height: $h-spotify-logo;
         }
-
         img {
             width: 70%;
         }
-
         .menu-container {
             width: 100%;
 
+            &.flex {
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+
+            }
             &.opcoes {
                 min-height: $menu-opcoes;
-                flex-direction: column;
+
 
                 * {
                     margin-bottom: $m-entre-menus;
                 }
             }
-
             .playlist-titulo {
                 margin: 10px 0px;
                 align-items: flex-start;
                 font-weight: 700;
-                font-size: .7rem;
-                color:
+                font-size: .70rem;
+                color: $preto-transparent-30
             }
-        }
+
+            .playlist-scroll {
+                width: 100%;
+                max-height: calc(95vh - $h-desconsiderar);
+                overflow-y: auto;
+
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+                * {
+                    margin-bottom: $m-entre-menus;
+                }
+            }
+        }       
+    }
+    .usuario-info{
+        flex-grow: 0;      
+        display: block;
+        bottom: 0;
+        align-items: flex-end;
+        height: $h-footer-user;
+        width: 100%;
+        
     }
 }
