@@ -1,6 +1,17 @@
+@import 'table';
+@import 'variaveis';
+
 :host {
     display: flex;
     justify-content: space-between;
+
+    ::-webkit-scrollbar {
+        width: 7px;
+          &-thumb {
+              background-color: rgba($cor-primaria, .2);
+              border-radius: 10px;
+          }
+      }
 
     .minhas-musicas {
         padding: 0px 50px;

@@ -1,3 +1,4 @@
+import { PainelDireitoComponent } from './../../components/painel-direito/painel-direito.component';
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { PlayerComponent } from "./player.component";
@@ -18,6 +19,8 @@ import { TopArtistaComponent } from "src/app/components/top-artista/top-artista.
     RodapeUsuarioComponent,
     HomeComponent,
     TopArtistaComponent,
+    PainelDireitoComponent,
+    
   ],
   imports: [
     CommonModule,
