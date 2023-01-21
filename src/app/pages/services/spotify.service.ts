@@ -17,6 +17,7 @@ import { IMusica } from "src/app/Interfaces/IMusica";
   providedIn: "root",
 })
 export class SpotifyService {
+  
   spotifyApi: Spotify.SpotifyWebApiJs = null;
   usuario: IUsuario;
 
@@ -74,29 +75,43 @@ export class SpotifyService {
 
   async buscarTopArtistas(limit = 10): Promise<IArtista[]> {
     const artistas = await this.spotifyApi.getMyTopArtists({ limit });
-
-    return artistas.items.map(SpotifyArtistaParaArtista)
+    return artistas.items.map(SpotifyArtistaParaArtista);
   }
-
 
   async buscarMusicas(offset = 0, limit = 50): Promise<IMusica[]> {
     const musicas = await this.spotifyApi.getMySavedTracks({ offset, limit });
-    return musicas.items.map(x => SpotifyTrackParaMusica(x.track));
-  };
+    return musicas.items.map((x) => SpotifyTrackParaMusica(x.track));
+  }
 
   async executarMusica(musicaId: string) {
     await this.spotifyApi.queue(musicaId);
     await this.spotifyApi.skipToNext();
-
   }
 
   async obterMusicaAtual(): Promise<IMusica> {
     const musicaSpotify = await this.spotifyApi.getMyCurrentPlayingTrack();
-    return SpotifyTrackParaMusica(musicaSpotify.item);
-  };
+    return SpotifyTrackParaMusica(musicaSpotify.item, musicaSpotify);
+    
+  }
+
+  async voltarMusica(){
+    await this.spotifyApi.skipToPrevious();
+  }
+
+  async proximaMusica(){
+    await this.spotifyApi.skipToNext();
+  }
+ async pauseMusica() {
+    await this.spotifyApi.pause();
+  }
+ async playMusica() {
+    await this.spotifyApi.play();
+  }
+
+  // criar metodo para pegar os dados da playlist pelo id selecionado (this.spotifyApi.getPlaylist(playlistId))
 
   logout() {
     localStorage.clear();
-    this.router.navigate(['/login']);
+    this.router.navigate(["/login"]);
   }
 }
