@@ -30,7 +30,7 @@ export function SpotifyArtistaParaArtista(SpotifyArtista: SpotifyApi.ArtistObjec
     };
 }
 
-export function SpotifyTrackParaMusica(spotifyTrack: SpotifyApi.TrackObjectFull) : IMusica{
+export function SpotifyTrackParaMusica(spotifyTrack: SpotifyApi.TrackObjectFull, response: SpotifyApi.CurrentlyPlayingResponse = null) : IMusica{
 
     if (!spotifyTrack)
     return newMusica();
@@ -43,6 +43,7 @@ export function SpotifyTrackParaMusica(spotifyTrack: SpotifyApi.TrackObjectFull)
     return {
         id: spotifyTrack.uri,
         titulo: spotifyTrack.name,
+        tocando: response?.is_playing ?? false,
         album: {
             id: spotifyTrack.id,
             imagemUrl:spotifyTrack.album.images.shift().url,

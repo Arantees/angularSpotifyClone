@@ -9,6 +9,7 @@ import { IMusica } from 'src/app/Interfaces/IMusica';
   providedIn: 'root'
 })
 export class PlayerService {
+  
 
   musicaAtual = new BehaviorSubject<IMusica>(newMusica());
   timerId: any = null;
@@ -19,20 +20,37 @@ export class PlayerService {
   }
 
   async obterMusicaAtual() {
-    clearTimeout(this.timerId)
+    clearTimeout(this.timerId);
 
     //obtenho a musica
     const musica = await this.spotifyService.obterMusicaAtual();
     this.definirMusicaAtual(musica);
+    
 
     // para fazer o loop
     this.timerId = setInterval(async() => {
       await this.obterMusicaAtual();
-    }, 3000)
+    }, 5000)
   }
 
   definirMusicaAtual(musica: IMusica) {
     this.musicaAtual.next(musica);
+  }
+
+  async voltarMusica(){
+    await this.spotifyService.voltarMusica()
+  }
+
+  async pauseMusica(){
+    await this.spotifyService.pauseMusica()
+  }
+
+  async playMusica() {
+   await this.spotifyService.playMusica(); 
+  }
+  
+  async proximaMusica(){
+  await this.spotifyService.proximaMusica()
   }
 
 }

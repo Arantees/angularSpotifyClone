@@ -1,3 +1,6 @@
+import { PlayerCardComponent } from './../../components/player-card/player-card.component';
+import { ArtistaItemImagemComponent } from './../../components/artista-item-imagem/artista-item-imagem.component';
+import { BuscasRecentesComponent } from './../../components/buscas-recentes/buscas-recentes.component';
 import { PainelDireitoComponent } from './../../components/painel-direito/painel-direito.component';
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
@@ -10,6 +13,8 @@ import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 import { RodapeUsuarioComponent } from "src/app/components/rodape-usuario/rodape-usuario.component";
 import { HomeComponent } from "../home/home.component";
 import { TopArtistaComponent } from "src/app/components/top-artista/top-artista.component";
+import { FormsModule } from '@angular/forms';
+import { TopArtistasComponent } from 'src/app/components/top-artistas/top-artistas.component';
 
 @NgModule({
   declarations: [
@@ -20,11 +25,16 @@ import { TopArtistaComponent } from "src/app/components/top-artista/top-artista.
     HomeComponent,
     TopArtistaComponent,
     PainelDireitoComponent,
+    BuscasRecentesComponent,
+    TopArtistasComponent,
+    ArtistaItemImagemComponent,
+    PlayerCardComponent,
     
   ],
   imports: [
     CommonModule,
     FontAwesomeModule,
+    FormsModule,
     RouterModule.forChild(PlayerRotas),
   ],
 })

@@ -9,6 +9,7 @@ export const PlayerRotas: Routes = [{
         {
             path: 'home',
             component: HomeComponent,
-        }
+        },
+        // criar outra rota para playlist
     ]
 }]

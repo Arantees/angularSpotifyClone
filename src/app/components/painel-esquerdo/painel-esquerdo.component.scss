@@ -14,8 +14,7 @@ $h-desconsiderar: calc($h-spotify-logo + $menu-opcoes + $h-footer-user );
     display: flex;
     flex-direction: column;
     background-color: $cor-fundo2;
-
-    box-shadow: 1px 1px 15px #00000012;
+    box-shadow: 1px 0px 15px #00000012;
 
     .menus {
         flex-grow: 1;
