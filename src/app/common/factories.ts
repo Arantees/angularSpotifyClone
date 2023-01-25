@@ -1,3 +1,4 @@
+import { IPlaylist } from 'src/app/Interfaces/IPlaylist';
 import { IMusica } from './../Interfaces/IMusica';
 import { faNotesMedical } from '@fortawesome/free-solid-svg-icons';
 import { IArtista } from './../Interfaces/IArtista';
@@ -6,6 +7,7 @@ export function newArtista(): IArtista {
         id:'',
         imagemUrl: '',
         nome: '',
+        musicas: []
     };
 }
 
@@ -21,5 +23,14 @@ export function newMusica():IMusica {
         artistas: [],
         tempo: '',
         titulo: '',
+    }
+}
+
+export function newPlaylist() : IPlaylist{
+    return {
+        id: '',
+        imagemUrl: '',
+        nome:'',
+        musicas: [],
     }
 }

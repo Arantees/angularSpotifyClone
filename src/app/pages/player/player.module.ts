@@ -1,3 +1,5 @@
+import { BannerComponent } from './../../components/banner/banner.component';
+import { ListaMusicasComponent } from './../lista-musicas/lista-musicas.component';
 import { PlayerCardComponent } from './../../components/player-card/player-card.component';
 import { ArtistaItemImagemComponent } from './../../components/artista-item-imagem/artista-item-imagem.component';
 import { BuscasRecentesComponent } from './../../components/buscas-recentes/buscas-recentes.component';
@@ -29,6 +31,8 @@ import { TopArtistasComponent } from 'src/app/components/top-artistas/top-artist
     TopArtistasComponent,
     ArtistaItemImagemComponent,
     PlayerCardComponent,
+    ListaMusicasComponent,
+    BannerComponent,
     
   ],
   imports: [
