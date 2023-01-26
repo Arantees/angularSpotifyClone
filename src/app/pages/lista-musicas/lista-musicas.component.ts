@@ -67,7 +67,7 @@ async obterDadosPagina(tipo: string, id: string){
 async obterDadosPlaylist(playlistId: string){
   const playlistMusicas = await this.spotifyservice.buscarMusicasPlaylist(playlistId);
   this.definirDadosPagina(playlistMusicas.nome, playlistMusicas.imagemUrl, playlistMusicas.musicas);
-  this.title= 'Musicas Playlist:' + playlistMusicas.nome;
+  this.title= playlistMusicas.nome;
 }
 
 async obterDadosArtista(artistaId: string){

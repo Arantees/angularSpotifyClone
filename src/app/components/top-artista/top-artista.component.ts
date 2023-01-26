@@ -10,7 +10,7 @@ import { newArtista } from 'src/app/common/factories';
 })
 export class TopArtistaComponent implements OnInit {
 
-topArtista: IArtista =newArtista();
+topArtista: IArtista = newArtista();
 
   constructor(private spotifyService: SpotifyService) { }
 
