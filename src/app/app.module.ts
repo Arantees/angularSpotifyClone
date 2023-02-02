@@ -6,10 +6,12 @@ import { AppRotas } from './app.routes';
 import { PagesComponent } from './pages/pages.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
+
 @NgModule({
   declarations: [
     AppComponent,
-    PagesComponent
+    PagesComponent,
+  
   ],
   imports: [
     BrowserModule,

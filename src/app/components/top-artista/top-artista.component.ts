@@ -24,5 +24,5 @@ topArtista: IArtista = newArtista();
   if (!!artistas)
 this.topArtista = artistas.pop();
   } 
-
+  
 }
