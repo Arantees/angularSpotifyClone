@@ -93,6 +93,12 @@ export class SpotifyService {
     const artistas = await this.spotifyApi.getMyTopArtists({ limit });
     return artistas.items.map(SpotifyArtistaParaArtista);
   }
+  async buscarArtista(artistaId: string): Promise<IArtista> {
+    const artista = await this.spotifyApi.getArtist(artistaId);
+    console.log(artista)
+    return SpotifyArtistaParaArtista(artista);
+    
+  }
 
   async buscarMusicas(offset = 0, limit = 50): Promise<IMusica[]> {
     const musicas = await this.spotifyApi.getMySavedTracks({ offset, limit });

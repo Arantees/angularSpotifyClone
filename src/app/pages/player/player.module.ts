@@ -1,3 +1,4 @@
+import { ArtistaMusicasComponent } from './../../components/artista-musicas/artista-musicas.component';
 import { BannerComponent } from './../../components/banner/banner.component';
 import { ListaMusicasComponent } from './../lista-musicas/lista-musicas.component';
 import { PlayerCardComponent } from './../../components/player-card/player-card.component';
@@ -33,6 +34,7 @@ import { TopArtistasComponent } from 'src/app/components/top-artistas/top-artist
     PlayerCardComponent,
     ListaMusicasComponent,
     BannerComponent,
+    ArtistaMusicasComponent,
     
   ],
   imports: [

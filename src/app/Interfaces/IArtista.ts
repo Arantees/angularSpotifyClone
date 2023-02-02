@@ -4,4 +4,5 @@ export interface IArtista {
     nome: string,
     imagemUrl: string,
     musicas?: IMusica[]
+    popularidade?: number,
 }

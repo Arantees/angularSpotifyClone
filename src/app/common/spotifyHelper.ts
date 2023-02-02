@@ -37,7 +37,8 @@ export function SpotifyArtistaParaArtista(SpotifyArtista: SpotifyApi.ArtistObjec
     return {
         id:SpotifyArtista.id,
         imagemUrl: SpotifyArtista.images.sort((a,b) => a.width - b.width).pop().url,
-        nome:SpotifyArtista.name
+        nome:SpotifyArtista.name,
+    popularidade:SpotifyArtista.popularity,
     };
 }
 

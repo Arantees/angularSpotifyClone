@@ -58,10 +58,9 @@ obterMusicas(){
   this.subs.push(sub)
 }
 async obterDadosPagina(tipo: string, id: string){
-  if (tipo === 'playlist')
+  
   await this.obterDadosPlaylist(id);
-  else
-  await this.obterDadosArtista(id);
+  
 }
 
 async obterDadosPlaylist(playlistId: string){
@@ -70,9 +69,6 @@ async obterDadosPlaylist(playlistId: string){
   this.title= playlistMusicas.nome;
 }
 
-async obterDadosArtista(artistaId: string){
-  
-}
 
 definirDadosPagina(bannerTexto: string, bannerImage: string, musicas: IMusica[]){
 this.bannerImagemUrl = bannerImage;
